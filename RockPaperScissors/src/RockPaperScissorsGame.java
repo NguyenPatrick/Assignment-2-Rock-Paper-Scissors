@@ -1,89 +1,103 @@
-/*
+/****************************************************************************
+*
 * Created by: Patrick Nguyen
 * Created on: September 16 2016
 * This program is a dice game
-*/
-
+*
+****************************************************************************/
 import java.util.Scanner;
 import java.util.Random;
 
 public class RockPaperScissorsGame {
-
-	
+// score variables
+static int playerScore = 0;
+static int cpuScore = 0;
+	  
+	  
+ // procedure to decide the result of the rock, paper, scissors game
+ public static void PlayGame (String cpuGuess, String playerGuess)
+ {
+	  System.out.println("Cpu Attack: " + cpuGuess + ", Player Attack: " + playerGuess);
+	  
+	  if ((cpuGuess.equals("R") && playerGuess.equals("S")) || (cpuGuess.equals("S") && playerGuess.equals("P")) || cpuGuess.equals("P") && playerGuess.equals("R") )
+	  {
+		  cpuScore = cpuScore + 1;
+		  System.out.println("Player Loses! Cpu Wins!");
+	  }
+	  else if ((cpuGuess.equals("S") && playerGuess.equals("R")) || (cpuGuess.equals("P") && playerGuess.equals("S")) || cpuGuess.equals("R") && playerGuess.equals("P") )
+	  {
+		  playerScore = playerScore + 1;
+		  System.out.println("Player Wins! Cpu Loses!");
+	  }
+	  else if ((cpuGuess.equals("R") && playerGuess.equals("R")) || (cpuGuess.equals("S") && playerGuess.equals("S")) || cpuGuess.equals("P") && playerGuess.equals("P") )
+	  {
+		  System.out.println("It's A Tie!");
+	  }
+	  
+      System.out.println("Cpu Score: " + cpuScore + ", Player Score: " + playerScore);  
+ }
+	 
+	 
  public static void main(String[] args)
  {
+  // imported components
   Scanner scan = new Scanner(System.in);
   Random generator = new Random();
-  
-  // variables
-  int cpuGuess; 
-  String playerGuess = "Test";
 
-  String cpuFinalPlay = "test";
-  int playerScore = 0;
-  int cpuScore = 0;
-  String terminateGame;
+  // game usage
+  int cpuFinalPlay;  
+  String firstPlayerGuess = "";
+  String firstCpuGuess = "";
+  String terminateGame = "";
+  
+  // booleans for  loops
   Boolean continueGame = true;
   Boolean failedInput = false;
   
-  
+  // loops the program until commanded to stop
   while (continueGame.equals(true))
   {
-	  while(failedInput.equals(false)){
-		  
-  System.out.println("Rock Paper Scissors Game! Rock > Scissors, Scissors > Paper, Paper > Rock");
-  System.out.println("Type 'R' for Rock, Type 'P' for Paper, Type 'S' for Scissors");
-  playerGuess = scan.nextLine();
+      // makes sure user input is valid
+	  while(failedInput.equals(false))
+	  {	  
+        System.out.println("Rock Paper Scissors Game! Rock > Scissors, Scissors > Paper, Paper > Rock");
+        System.out.println("Type 'R' for Rock, Type 'P' for Paper, Type 'S' for Scissors");
+        firstPlayerGuess = scan.nextLine();
   
-  if (playerGuess.equals("R") || playerGuess.equals("S") || playerGuess.equals("P")) 
-  {
-	  failedInput = true;
+        // user can only choose from three choices (R, S or P)
+        if (firstPlayerGuess.equals("R") || firstPlayerGuess.equals("S") || firstPlayerGuess.equals("P")) 
+        {
+	    failedInput = true;
+        }
+        else
+        {
+	    System.out.println("INVALID INPUT! TRY AGAIN!");
+	     System.out.println("");
+        }
   }
-  else
-  {
-	  System.out.println("INVALID INPUT! TRY AGAIN!");
-	  System.out.println("");
-  }
-}
-   
+
+  // randomize cpu value
+  cpuFinalPlay = generator.nextInt(3) + 1; 
   
-  cpuGuess = generator.nextInt(3) + 1; 
-  
-  // cpu's rock paper scissors decision
-  if (cpuGuess == 1) 
+  // convert's cpu's decision into a string
+  if (cpuFinalPlay == 1) 
   {
-	  cpuFinalPlay = "R"; 
+	  firstCpuGuess = "R"; 
   }
-   else if (cpuGuess == 2) 
+   else if (cpuFinalPlay == 2) 
    {
-	   cpuFinalPlay = "P"; 
+	   firstCpuGuess = "P"; 
    }
-   else if (cpuGuess == 3) 
+   else if (cpuFinalPlay == 3) 
    {
-	   cpuFinalPlay = "S"; 
+	   firstCpuGuess = "S"; 
    }
 		  
-		  
-  System.out.println("Cpu Attack: " + cpuFinalPlay + ", Player Attack: " + playerGuess);
-  
-  if ((cpuFinalPlay.equals("R") && playerGuess.equals("S")) || (cpuFinalPlay.equals("S") && playerGuess.equals("P")) || cpuFinalPlay.equals("P") && playerGuess.equals("R") )
-  {
-	  cpuScore = cpuScore + 1;
-	  System.out.println("Player Loses! Cpu Wins!");
-  }
-  else if ((cpuFinalPlay.equals("S") && playerGuess.equals("R")) || (cpuFinalPlay.equals("P") && playerGuess.equals("S")) || cpuFinalPlay.equals("R") && playerGuess.equals("P") )
-  {
-	  playerScore = playerScore + 1;
-	  System.out.println("Player Wins! Cpu Loses!");
-  }
-  else if ((cpuFinalPlay.equals("R") && playerGuess.equals("R")) || (cpuFinalPlay.equals("S") && playerGuess.equals("S")) || cpuFinalPlay.equals("P") && playerGuess.equals("P") )
-  {
-	  System.out.println("It's A Tie!");
-  }
-  
-  
-  System.out.println("Cpu Score: " + cpuScore + ", Player Score: " + playerScore);  
-  System.out.println("Type 'END' to end the game, else type anything to continue.");
+  // go to procedure
+  PlayGame(firstCpuGuess, firstPlayerGuess);
+
+  // to continue or end the game
+  System.out.println("Type 'END' to end the game, else type anything else to continue.");
   terminateGame = scan.nextLine();
   System.out.println("");
   
