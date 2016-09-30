@@ -19,20 +19,21 @@ static int cpuScore = 0;
  {
 	  System.out.println("Cpu Attack: " + cpuGuess + ", Player Attack: " + playerGuess);
 	  
-	  if ((cpuGuess.equals("R") && playerGuess.equals("S")) || (cpuGuess.equals("S") && playerGuess.equals("P")) || cpuGuess.equals("P") && playerGuess.equals("R") )
+	  if (cpuGuess.equals(playerGuess))
 	  {
-		  cpuScore = cpuScore + 1;
-		  System.out.println("Player Loses! Cpu Wins!");
+		  System.out.println("It's A Tie!");
 	  }
 	  else if ((cpuGuess.equals("S") && playerGuess.equals("R")) || (cpuGuess.equals("P") && playerGuess.equals("S")) || cpuGuess.equals("R") && playerGuess.equals("P") )
 	  {
 		  playerScore = playerScore + 1;
 		  System.out.println("Player Wins! Cpu Loses!");
-	  }
-	  else if ((cpuGuess.equals("R") && playerGuess.equals("R")) || (cpuGuess.equals("S") && playerGuess.equals("S")) || cpuGuess.equals("P") && playerGuess.equals("P") )
+	  }	  
+	  else if ((cpuGuess.equals("R") && playerGuess.equals("S")) || (cpuGuess.equals("S") && playerGuess.equals("P")) || cpuGuess.equals("P") && playerGuess.equals("R") )
 	  {
-		  System.out.println("It's A Tie!");
+		  cpuScore = cpuScore + 1;
+		  System.out.println("Player Loses! Cpu Wins!");
 	  }
+	 
 	  
       System.out.println("Cpu Score: " + cpuScore + ", Player Score: " + playerScore);  
  }
