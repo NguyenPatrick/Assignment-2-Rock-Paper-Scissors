@@ -1,10 +1,11 @@
 /****************************************************************************
 *
 * Created by: Patrick Nguyen
-* Created on: September 16 2016
-* This program is a dice game
+* Created on: October 2016
+* This program generates game(s) of rock, paper, scissors with the cpu
 *
 ****************************************************************************/
+
 import java.util.Scanner;
 import java.util.Random;
 
@@ -28,13 +29,12 @@ static int cpuScore = 0;
 		  playerScore = playerScore + 1;
 		  System.out.println("Player Wins! Cpu Loses!");
 	  }	  
-	  else if ((cpuGuess.equals("R") && playerGuess.equals("S")) || (cpuGuess.equals("S") && playerGuess.equals("P")) || cpuGuess.equals("P") && playerGuess.equals("R") )
+	  else 
 	  {
 		  cpuScore = cpuScore + 1;
 		  System.out.println("Player Loses! Cpu Wins!");
 	  }
-	 
-	  
+	   
       System.out.println("Cpu Score: " + cpuScore + ", Player Score: " + playerScore);  
  }
 	 
@@ -51,7 +51,7 @@ static int cpuScore = 0;
   String firstCpuGuess = "";
   String terminateGame = "";
   
-  // booleans for  loops
+  // booleans for loops
   Boolean continueGame = true;
   Boolean failedInput = false;
   
