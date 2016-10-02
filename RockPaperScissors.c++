@@ -83,7 +83,6 @@ int main()
 		// code retrieved from http://stackoverflow.com/questions/13445688/how-to-generate-a-random-number-in-c
 		srand((unsigned)(time(0)));
 	        cpuFinalPlay = (rand() % 3) + 1;
-		cout << cpuFinalPlay << endl;
 
 		// convert's cpu's decision into a string
 		if (cpuFinalPlay == 1)
