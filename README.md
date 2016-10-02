@@ -1,1 +1,10 @@
-# AssignementTwo
+![alt tag](https://github.com/Ultimatrick/AssignmentTwo/blob/master/Screenshot%20(19).png)
+![alt tag](https://github.com/Ultimatrick/AssignmentTwo/blob/master/Screenshot%20(20).png)
+![alt tag](https://github.com/Ultimatrick/AssignmentTwo/blob/master/Screenshot%20(21).png)
+![alt tag](https://github.com/Ultimatrick/AssignmentTwo/blob/master/Screenshot%20(22).png)
+![alt tag](https://github.com/Ultimatrick/AssignmentTwo/blob/master/Screenshot%20(23).png)
+![alt tag](https://github.com/Ultimatrick/AssignmentTwo/blob/master/Screenshot%20(24).png)
+![alt tag](https://github.com/Ultimatrick/AssignmentTwo/blob/master/Screenshot%20(25).png)
+![alt tag](https://github.com/Ultimatrick/AssignmentTwo/blob/master/Screenshot%20(26).png)
+![alt tag](https://github.com/Ultimatrick/AssignmentTwo/blob/master/Screenshot%20(27).png)
+
