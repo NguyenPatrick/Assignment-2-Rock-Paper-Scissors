@@ -102,7 +102,7 @@ int main()
 		PlayGame(firstCpuGuess, firstPlayerGuess);
 
 		// to continue or end the game
-		cout << "Type 'END' to end the game, else type anything to continue." << endl;;
+		cout << "Type 'END' to end the game, else type anything to continue." << endl;
 		cin >> terminateGame;
 
 		if (terminateGame == "END")
