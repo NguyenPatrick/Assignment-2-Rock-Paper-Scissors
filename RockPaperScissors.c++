@@ -9,7 +9,7 @@
 #include "stdafx.h"
 #include <iostream>
 #include <string>
-#include <random>
+#include <ctime>
 
 using namespace std;
 
@@ -47,13 +47,8 @@ void PlayGame(string cpuGuess, string playerGuess)
 // starting point
 int main()
 {
-	// random code 
-	// retrieved from http://stackoverflow.com/questions/13445688/how-to-generate-a-random-number-in-c
-	std::mt19937 rng;
-	rng.seed(std::random_device()());
-	std::uniform_int_distribution<std::mt19937::result_type> dist3(1, 3); // distribution in range [1, 3]
-
 	// variables for game usage
+	int cpuFinalPlay;
 	string firstPlayerGuess;
 	string firstCpuGuess;
 	string terminateGame;
@@ -84,10 +79,11 @@ int main()
 		}
 
 		// randomize cpu value
-		int cpuFinalPlay;
-		cpuFinalPlay = dist3(rng);
-	    // cpuFinalPlay = (rand() % 3) + 1;--> this random method generates same values ALL the time
-		// cout << cpuFinalPlay << endl; --> used to debug
+		// ensures there is no repeatition in random sequence
+		// code retrieved from http://stackoverflow.com/questions/13445688/how-to-generate-a-random-number-in-c
+		srand((unsigned)(time(0)));
+	    cpuFinalPlay = (rand() % 3) + 1;
+		cout << cpuFinalPlay << endl;
 
 		// convert's cpu's decision into a string
 		if (cpuFinalPlay == 1)
