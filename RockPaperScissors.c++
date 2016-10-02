@@ -82,7 +82,7 @@ int main()
 		// ensures there is no repeatition in random sequence
 		// code retrieved from http://stackoverflow.com/questions/13445688/how-to-generate-a-random-number-in-c
 		srand((unsigned)(time(0)));
-	    cpuFinalPlay = (rand() % 3) + 1;
+	        cpuFinalPlay = (rand() % 3) + 1;
 		cout << cpuFinalPlay << endl;
 
 		// convert's cpu's decision into a string
@@ -106,14 +106,12 @@ int main()
 		cout << "Type 'END' to end the game, else type anything to continue." << endl;;
 		cin >> terminateGame;
 
-
 		if (terminateGame == "END")
 		{
 			continueGame = false;
 		}
 		failedInput = false;
 	}
-
 	return 0;	
 }
 
