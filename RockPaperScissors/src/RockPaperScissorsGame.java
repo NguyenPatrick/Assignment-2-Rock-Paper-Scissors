@@ -13,8 +13,7 @@ public class RockPaperScissorsGame {
 // score variables
 static int playerScore = 0;
 static int cpuScore = 0;
-	  
-	  
+	  	  
  // procedure to decide the result of the rock, paper, scissors game
  public static void PlayGame (String cpuGuess, String playerGuess)
  {
@@ -37,8 +36,7 @@ static int cpuScore = 0;
 	   
       System.out.println("Cpu Score: " + cpuScore + ", Player Score: " + playerScore);  
  }
-	 
-	 
+	  
  public static void main(String[] args)
  {
   // imported components
